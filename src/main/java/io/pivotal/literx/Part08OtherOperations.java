@@ -17,7 +17,7 @@ public class Part08OtherOperations {
 
 	// TODO Create a Flux of user from Flux of username, firstname and lastname.
 	Flux<User> userFluxFromStringFlux(Flux<String> usernameFlux, Flux<String> firstnameFlux, Flux<String> lastnameFlux) {
-		return null;
+		return Flux.zip(usernameFlux, firstnameFlux, lastnameFlux).map(tuple3 -> new User(tuple3.getT1(), tuple3.getT2(), tuple3.getT3()));
 	}
 
 //========================================================================================
